@@ -4,7 +4,7 @@ date: 2016-12-01 18:47:00 +11:00
 ---
 
 # H1 line
-
+{{ site.title }}
 * List item
 
 * List item
