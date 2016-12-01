@@ -3,11 +3,6 @@ title: Second Page
 date: 2016-12-01 18:47:00 +11:00
 ---
 
-<HTML>
-  <head>
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
 # H1 line
 
 * List item
