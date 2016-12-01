@@ -3,7 +3,7 @@ title: Second Page
 date: 2016-12-01 18:47:00 +11:00
 ---
 
-<!DOCTYPE HTML>
+<HTML>
 <html>
   <head>
     <title>{{ page.title }}</title>
