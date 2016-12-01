@@ -4,7 +4,6 @@ date: 2016-12-01 18:47:00 +11:00
 ---
 
 <HTML>
-<html>
   <head>
     <title>{{ page.title }}</title>
   </head>
