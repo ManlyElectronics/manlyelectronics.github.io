@@ -9,11 +9,11 @@ date: 2016-12-01 18:47:00 +11:00
 
 * List item
 
-1. * List item
+1.  List item
 
-2. * List item
+2.  List item
 
-3. * List item
+3.  List item
 
 [Home page](http://manlyelectronics.com.au/)
 
