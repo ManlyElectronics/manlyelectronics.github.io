@@ -3,8 +3,13 @@ title: Second Page
 date: 2016-12-01 18:47:00 +11:00
 ---
 
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
 # H1 line
-{{ site.title }}
 
 * List item
 
