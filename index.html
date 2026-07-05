@@ -4,421 +4,448 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manly Electronics | Sydney Northern Beaches Computer Repairs</title>
+    <meta name="description" content="Computer repairs, WiFi setup, and web development on Sydney's Northern Beaches. Over 20 years of local experience. Open source WordPress plugins and tools by Dimitri.">
+    <link rel="icon" href="style/logo.png" type="image/png">
     <style>
-        * {
+        :root {
+            --blue: #0073aa;
+            --blue-dark: #075a8b;
+            --orange: #ffad00;
+            --gold: #ffd700;
+            --hero: #e5f3ff;
+            --alt: #f5faff;
+            --link: #0000cd;
+            --text: #1a1a1a;
+            --muted: #555;
+            --line: #d3e2ee;
+            --radius: 4px;
+            --shadow: 0 1px 3px rgba(7, 90, 139, 0.35);
+            --maxw: 1080px;
+            --pad: 24px;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 40px;
+            --space-5: 64px;
+        }
+
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
         }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background: #fff;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.25;
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.25rem; }
+        h2 { font-size: 1.75rem; }
+        h3 { font-size: 1.2rem; }
+
+        p {
+            margin: 0 0 var(--space-2);
+            color: var(--text);
+        }
+
+        p:last-child { margin-bottom: 0; }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        img { display: block; }
 
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: var(--maxw);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--pad);
         }
 
-        /* Header */
+        /* ---------- Header ---------- */
         header {
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
+            background: #fff;
+            border-bottom: 3px solid var(--orange);
+            position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
+            z-index: 100;
         }
 
         nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: var(--space-3);
+            min-height: 68px;
+            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #00d4ff;
-            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            font-size: 1.25rem;
+            font-weight: 700;
         }
 
-        .logo span {
-            color: #fff;
+        .logo:hover { text-decoration: none; }
+
+        .logo img {
+            width: 40px;
+            height: 38px;
         }
+
+        .logo .brand-alt { color: var(--blue); }
 
         .nav-links {
             display: flex;
+            align-items: center;
+            gap: var(--space-3);
             list-style: none;
-            gap: 30px;
         }
 
         .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
-            color: #00d4ff;
+            color: var(--blue);
+            text-decoration: none;
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
+        .btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
+            padding: 11px 22px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            line-height: 1;
+            border: 1px solid var(--blue-dark);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .btn:hover { text-decoration: none; }
+
+        .btn-primary {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #005e8a;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: var(--gold);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover { background: #ffe34d; }
+
+        .nav-links .btn { padding: 9px 18px; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            background: linear-gradient(180deg, var(--hero) 0%, #fff 100%);
+            border-bottom: 1px solid var(--line);
+            padding: var(--space-5) 0;
             text-align: center;
-            padding-top: 80px;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 720px;
+            margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-        }
+        .hero h1 { margin-bottom: var(--space-2); }
 
-        .hero h1 span {
-            color: #00d4ff;
-        }
+        .hero h1 .accent { color: var(--blue); }
 
         .hero p {
-            font-size: 1.3rem;
-            color: #b8b8b8;
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease 0.2s both;
+            font-size: 1.15rem;
+            color: var(--muted);
+            margin-bottom: var(--space-4);
         }
 
         .cta-buttons {
             display: flex;
-            gap: 20px;
+            gap: var(--space-2);
             justify-content: center;
-            animation: fadeInUp 1s ease 0.4s both;
+            flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+        /* ---------- Sections ---------- */
+        section { padding: var(--space-5) 0; }
+
+        .section-alt {
+            background: var(--alt);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            color: #fff;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #00d4ff;
-        }
-
-        .btn-secondary:hover {
-            background: #00d4ff;
-            color: #1a1a2e;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .section-title {
+        .section-head {
             text-align: center;
-            color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
+            max-width: 640px;
+            margin: 0 auto var(--space-4);
         }
 
-        .section-title span {
-            color: #00d4ff;
-        }
+        .section-head h2 { margin-bottom: var(--space-1); }
+        .section-head p { color: var(--muted); }
 
-        .features-grid {
+        /* ---------- Cards ---------- */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-3);
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0, 212, 255, 0.1);
+        .card {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: var(--space-3);
         }
 
-        .feature-card p {
+        .card h3 {
+            margin-bottom: var(--space-1);
+            color: var(--blue);
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.98rem;
             flex-grow: 1;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        .card .btn {
+            align-self: flex-start;
+            margin-top: var(--space-3);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            margin-bottom: var(--space-2);
+            border-radius: 50%;
+            background: var(--hero);
+            color: var(--blue);
+            flex: none;
         }
 
-        .feature-card h3 {
-            color: #fff;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        .icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .feature-card p {
-            color: #b8b8b8;
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 0;
-        }
-
+        /* ---------- About ---------- */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.6fr 1fr;
+            gap: var(--space-5);
             align-items: center;
         }
 
-        .about-text h2 {
-            color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+        .about-text h2 { margin-bottom: var(--space-3); }
+        .about-text .btn { margin-top: var(--space-2); }
 
-        .about-text h2 span {
-            color: #00d4ff;
-        }
+        .about-image { display: flex; justify-content: center; }
 
-        .about-text p {
-            color: #b8b8b8;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .about-image {
+        .about-badge {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-        }
-
-        .circuit-animation {
-            width: 300px;
-            height: 300px;
-            border: 3px solid #00d4ff;
+            justify-content: center;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            animation: pulse 2s infinite;
+            background: var(--hero);
+            border: 4px solid var(--orange);
+            text-align: center;
+            padding: var(--space-3);
         }
 
-        .circuit-animation::before {
-            content: '⚡';
-            font-size: 5rem;
+        .about-badge strong {
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--blue);
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: rgba(255, 255, 255, 0.02);
+        .about-badge span {
+            margin-top: var(--space-1);
+            font-weight: 700;
+            color: var(--text);
         }
 
+        /* ---------- Contact ---------- */
         .contact-content {
             text-align: center;
-            max-width: 600px;
+            max-width: 640px;
             margin: 0 auto;
         }
 
-        .contact h2 {
-            color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            color: #b8b8b8;
-            margin-bottom: 40px;
+        .contact-content h2 { margin-bottom: var(--space-3); }
+        .contact-content p {
+            color: var(--muted);
             font-size: 1.1rem;
+            margin-bottom: var(--space-4);
         }
 
-        .contact-email {
-            color: #00d4ff;
-            font-size: 1.3rem;
-            text-decoration: none;
-            display: inline-block;
-            padding: 15px 30px;
-            border: 2px solid #00d4ff;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-email:hover {
-            background: #00d4ff;
-            color: #1a1a2e;
-        }
-
-        /* Footer */
+        /* ---------- Footer ---------- */
         footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #fff;
+            border-top: 3px solid var(--blue-dark);
+            padding: var(--space-4) 0;
         }
 
-        footer p {
-            color: #666;
-        }
-
-        .social-links {
+        .footer-content {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-2);
+            text-align: center;
         }
 
-        .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+        .footer-content img {
+            width: 40px;
+            height: 38px;
         }
 
-        .social-links a:hover {
-            color: #00d4ff;
+        .footer-content p {
+            color: var(--muted);
+            font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
-            }
-        }
-
-        /* Responsive */
+        /* ---------- Responsive ---------- */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            h1 { font-size: 1.85rem; }
+            h2 { font-size: 1.5rem; }
 
             .nav-links {
-                display: none;
+                gap: var(--space-2);
+                font-size: 0.9rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: var(--space-4);
                 text-align: center;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+            .about-text .btn { margin: var(--space-2) auto 0; }
+        }
+
+        @media (max-width: 560px) {
+            .nav-links li.nav-item { display: none; }
+            section { padding: var(--space-4) 0; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <a href="#" class="logo">Manly<span>Electronics</span></a>
+            <a href="#home" class="logo">
+                <img src="style/logo.png" width="40" height="38" alt="Manly Electronics logo">
+                <span>Manly<span class="brand-alt"> Electronics</span></span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="nav-item"><a href="#services">Services</a></li>
+                <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li><a href="#contact" class="btn btn-primary">Book in</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Sydney Northern Beaches <span>Computer Repairs</span></h1>
-                <p>One call sorts all your tech problems. Over 20 years of local experience delivering expert computer repairs with honest, personalised service.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Book Now</a>
-                    <a href="#features" class="btn btn-secondary">Our Services</a>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Sydney Northern Beaches <span class="accent">Computer Repairs</span></h1>
+                    <p>One call sorts all your tech problems. Over 20 years of local experience delivering expert computer repairs with honest, personalised service.</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Book Now</a>
+                        <a href="#services" class="btn btn-secondary">Our Services</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
+        <section id="services">
             <div class="container">
-                <h2 class="section-title">Our <span>Services</span></h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">💻</div>
+                <div class="section-head">
+                    <h2>Our Services</h2>
+                    <p>On-site help across the Northern Beaches, from computers to connectivity.</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
                         <h3>Computer Repairs</h3>
                         <p>Mobile technician quickly resolves issues with laptops, desktops, email, and overall computer performance. On-site or pick-up service.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📶</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></span>
                         <h3>WiFi Installation</h3>
                         <p>Resolve slow internet speeds and Wi-Fi dropouts, install WiFi access points, set up mesh networks, and configure NBN modems.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌐</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
                         <h3>Web Development</h3>
-                        <p>Custom WordPress & WooCommerce plugins, SEO tools, and web solutions. <a href="#portfolio" style="color: #00d4ff;">View our open source projects</a></p>
+                        <p>Custom WordPress &amp; WooCommerce plugins, SEO tools, and web solutions built to modern standards.</p>
+                        <a href="#portfolio" class="btn btn-secondary">View open source projects</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📺</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg></span>
                         <h3>AV Setup</h3>
                         <p>Connect and configure TVs and amplifiers, reduce remote controls, set up wireless speakers like Sonos, and troubleshoot AV issues.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏢</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span>
                         <h3>Business IT</h3>
                         <p>WiFi access points for strata buildings and businesses. Network configuration and ongoing IT support for small businesses.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏠</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
                         <h3>Home Services</h3>
                         <p>We come to you! Free call-out to Sydney Northern Beaches. Fast, cost-effective solutions tailored to your needs.</p>
                     </div>
@@ -426,86 +453,91 @@
             </div>
         </section>
 
-        <section id="portfolio" class="features">
+        <section id="portfolio" class="section-alt">
             <div class="container">
-                <h2 class="section-title">Open Source <span>Portfolio</span></h2>
-                <p style="text-align: center; color: #b8b8b8; margin-bottom: 40px;">WordPress plugins and web development tools built by Dimitri</p>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🧹</div>
+                <div class="section-head">
+                    <h2>Open Source Portfolio</h2>
+                    <p>WordPress plugins and web development tools built by Dimitri.</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg></span>
                         <h3>Cleanup Orphan Images</h3>
                         <p>WordPress plugin that deletes files from the uploads directory not registered in WordPress database. Keeps your media library clean.</p>
-                        <a href="https://github.com/ManlyElectronics/cleanup-orphan-images" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">View on GitHub</a>
+                        <a href="https://github.com/ManlyElectronics/cleanup-orphan-images" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔍</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
                         <h3>Auto Product Meta Description</h3>
                         <p>WooCommerce plugin that automatically generates SEO-friendly meta descriptions for product pages. Boost your store's search rankings.</p>
-                        <a href="https://github.com/ManlyElectronics/auto-product-meta-description" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">View on GitHub</a>
+                        <a href="https://github.com/ManlyElectronics/auto-product-meta-description" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🛒</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
                         <h3>Product Excerpt</h3>
                         <p>WordPress plugin that overrides WooCommerce product excerpt with eBay Condition Description via WP-Lister integration.</p>
-                        <a href="https://github.com/ManlyElectronics/product-excerpt" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">View on GitHub</a>
+                        <a href="https://github.com/ManlyElectronics/product-excerpt" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">😀</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
                         <h3>No Emojis</h3>
                         <p>Lightweight WordPress plugin that disables emoji scripts and styles. Improve page load speed by removing unnecessary resources.</p>
-                        <a href="https://github.com/ManlyElectronics/no-emojis" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">View on GitHub</a>
+                        <a href="https://github.com/ManlyElectronics/no-emojis" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌐</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
                         <h3>Domain Tracker</h3>
                         <p>PHP-based domain management tool. Fetches and saves domain information, DNS records, with custom properties to local JSON file.</p>
-                        <a href="https://github.com/ManlyElectronics/DomainTracker" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">View on GitHub</a>
+                        <a href="https://github.com/ManlyElectronics/DomainTracker" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">�️</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
                         <h3>Manly WebP Converter</h3>
                         <p>WordPress plugin that converts media library images to WebP format, reducing server storage and improving page load times. Available on WordPress.org.</p>
-                        <a href="https://github.com/ManlyElectronics/webp-converter" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">View on GitHub</a>
+                        <a href="https://github.com/ManlyElectronics/webp-converter" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔧</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
                         <h3>Manly Fix</h3>
                         <p>WordPress plugin that applies configurable HTML5 fixes to WordPress and WooCommerce output, resolving W3C validator errors with individual toggles per fix.</p>
-                        <a href="https://github.com/ManlyElectronics/WP-Woo-fix" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">View on GitHub</a>
+                        <a href="https://github.com/ManlyElectronics/WP-Woo-fix" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">�📦</div>
+                    <div class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
                         <h3>View All Projects</h3>
                         <p>Explore all open source projects, including PowerShell scripts, Java lessons, and more on our GitHub profile.</p>
-                        <a href="https://github.com/ManlyElectronics" target="_blank" class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;">Visit GitHub</a>
+                        <a href="https://github.com/ManlyElectronics" target="_blank" rel="noopener" class="btn btn-secondary">Visit GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <section id="about">
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2>About <span>Us</span></h2>
+                        <h2>About Us</h2>
                         <p>Founded in 2004, Manly Electronics delivers expert computer repairs with honest, personalised service. Based in Sydney's Northern Beaches, we offer fast, cost-effective solutions tailored to each customer's needs.</p>
                         <p>Owner Dimitri began repairing electronics while still in school, holds an engineering degree, and has run his business continuously since last century, earning a reputation for practical expertise and reliability.</p>
-                        <p>Prompt & reliable service on-site. Over 20 years of local experience. Fully insured. We accept Visa, Mastercard, and American Express.</p>
+                        <p>Prompt &amp; reliable service on-site. Over 20 years of local experience. Fully insured. We accept Visa, Mastercard, and American Express.</p>
                         <a href="#contact" class="btn btn-primary">Book a Service</a>
                     </div>
                     <div class="about-image">
-                        <div class="circuit-animation"></div>
+                        <div class="about-badge">
+                            <strong>20+</strong>
+                            <span>Years of local experience</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="section-alt">
             <div class="container">
                 <div class="contact-content">
                     <h2>Get In Touch</h2>
-                    <p>Quick free call-outs available to the Northern Beaches and North Shore NSW, covering all suburbs from Manly to Palm Beach and North Sydney to Mosman. Open Mon - Sat, 8AM - 8PM.</p>
-                    <a href="https://manlyelectronics.com.au" target="_blank" class="contact-email">Visit manlyelectronics.com.au</a>
+                    <p>Quick free call-outs available to the Northern Beaches and North Shore NSW, covering all suburbs from Manly to Palm Beach and North Sydney to Mosman. Open Mon&nbsp;-&nbsp;Sat, 8AM&nbsp;-&nbsp;8PM.</p>
+                    <a href="https://manlyelectronics.com.au" target="_blank" rel="noopener" class="btn btn-primary">Visit manlyelectronics.com.au</a>
                 </div>
             </div>
         </section>
@@ -513,10 +545,10 @@
 
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/ManlyElectronics" target="_blank" title="GitHub">📦</a>
+            <div class="footer-content">
+                <img src="style/logo.png" width="40" height="38" alt="Manly Electronics logo">
+                <p>&copy; 2026 Manly Electronics. All rights reserved.</p>
             </div>
-            <p>&copy; 2026 Manly Electronics. All rights reserved.</p>
         </div>
     </footer>
 </body>
