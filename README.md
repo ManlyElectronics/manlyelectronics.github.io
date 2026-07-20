@@ -1,32 +1,36 @@
-# Manly Electronics
+# Manly Electronics Website
 
-Welcome to the official website repository for **Manly Electronics**.
+Source for the Manly Electronics website, hosted with GitHub Pages at
+[manlyelectronics.github.io](https://manlyelectronics.github.io).
 
-**Live Site:** [https://manlyelectronics.github.io](https://manlyelectronics.github.io)
+Manly Electronics provides on-site technology support across Sydney's Northern
+Beaches and North Shore. The business was founded in 2004 and offers:
 
-## About
+- Home technology services
+- WiFi and mesh network installation
+- Computer repairs
+- TV, amplifier, and wireless audio setup
+- Small-business and strata IT support
+- Web development, including WordPress and WooCommerce solutions
 
-Manly Electronics is your trusted partner for innovative electronic solutions. We bring ideas to life through cutting-edge technology and expert craftsmanship.
+## Pages
 
-## Services
+- `index.html` — services and the main landing page
+- `portfolio.html` — selected client websites, WordPress plugins, and developer tools
+- `contact.html` — company background, service area, hours, and contact link
 
-- **Custom Design** - Tailored electronic solutions
-- **Prototyping** - Rapid prototyping services
-- **Repair Services** - Expert repair and maintenance
-- **IoT Solutions** - Connected device solutions
-- **PCB Design** - Professional PCB design and manufacturing
-- **Consulting** - Technical consulting and guidance
+Portfolio screenshots and other site assets are stored under `style/`.
 
-## Tech Stack
+## Technology
 
-- HTML5
-- CSS3 (with animations and responsive design)
-- GitHub Pages for hosting
+The site is built with static HTML5 and CSS3. It has no build step or runtime
+dependencies and is deployed directly through GitHub Pages.
+
+To preview it locally, open `index.html` in a browser or serve the repository
+with any static HTTP server.
 
 ## Contact
 
-Email: github@manlyelectronics.com.au
-
----
+Visit [manlyelectronics.com.au](https://manlyelectronics.com.au) for enquiries.
 
 © 2026 Manly Electronics. All rights reserved.
